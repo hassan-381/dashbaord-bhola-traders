@@ -5,7 +5,7 @@ import {
   UserIcon,
   ComputerDesktopIcon,
 } from "@heroicons/react/24/outline";
-import ProgressBar from "./Charts/ProgressBar";
+import ProgressBar from "./ProgressBar";
 
 const KPICards = () => {
   const kpiData = [

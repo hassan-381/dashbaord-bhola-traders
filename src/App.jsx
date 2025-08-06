@@ -2,10 +2,6 @@ import { useEffect, useState } from "react";
 import Sidebar from "./components/Layout/Sidebar";
 import Navbar from "./components/Layout/Navbar";
 import KPICards from "./components/Dashboard/KPICards";
-import Filters from "./components/Dashboard/Filters";
-import AreaChart from "./components/Dashboard/Charts/AreaChart";
-import BarChart from "./components/Dashboard/Charts/BarChart";
-import PieChart from "./components/Dashboard/Charts/PieChart";
 import UserTable from "./components/Dashboard/UserTable";
 
 function App() {

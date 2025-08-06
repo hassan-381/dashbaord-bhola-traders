@@ -27,14 +27,7 @@ const Navbar = ({
 
       <div className="flex-1 max-w-md ml-4">
         <div className="relative">
-          <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-            <MagnifyingGlassIcon className="h-5 w-5 text-gray-400" />
-          </div>
-          <input
-            type="text"
-            className="w-full py-2 pl-10 pr-4 text-gray-700 bg-gray-100 border-none rounded-lg dark:bg-gray-700 dark:text-gray-300 focus:ring-2 focus:ring-blue-500"
-            placeholder="Search..."
-          />
+          <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"></div>
         </div>
       </div>
 
