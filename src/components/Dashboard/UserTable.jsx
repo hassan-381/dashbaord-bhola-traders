@@ -72,7 +72,7 @@ const UserTable = () => {
     <Card className="hover:shadow-lg transition ease-in">
       <div className="flex flex-col sm:flex-row items-center justify-between mb-4">
         <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-2 sm:mb-0">
-          Users
+          Customers
         </h3>
         <div className="relative">
           <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">

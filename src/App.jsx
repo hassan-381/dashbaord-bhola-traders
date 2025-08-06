@@ -1,8 +1,10 @@
-import { useEffect, useState } from "react";
+import { Routes, Route } from "react-router-dom";
 import Sidebar from "./components/Layout/Sidebar";
 import Navbar from "./components/Layout/Navbar";
-import KPICards from "./components/Dashboard/KPICards";
-import UserTable from "./components/Dashboard/UserTable";
+import Dashboard from "./pages/Dashboard";
+import Customers from "./pages/Customers";
+import Vendor from "./pages/Vender";
+import { useState, useEffect } from "react";
 
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
@@ -10,18 +12,11 @@ function App() {
   const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
+    document.documentElement.classList.toggle("dark", darkMode);
   }, [darkMode]);
+
   return (
-    <div
-      className={`flex h-screen bg-gray-100 dark:bg-gray-900 ${
-        darkMode ? "dark" : ""
-      }`}
-    >
+    <div className={`flex h-screen bg-gray-100 dark:bg-gray-900`}>
       <Sidebar
         sidebarOpen={sidebarOpen}
         setSidebarOpen={setSidebarOpen}
@@ -43,26 +38,11 @@ function App() {
         />
 
         <main className="flex-1 overflow-y-auto p-6">
-          <KPICards />
-          {/* <div className="mt-6">
-            <Filters />
-          </div> */}
-
-          {/* <div className="grid grid-cols-1  lg:grid-cols-2 gap-6 mt-6">
-            <div className="lg:col-span-2">
-              <AreaChart />
-            </div>
-            <div>
-              <BarChart />
-            </div>
-            <div>
-              <PieChart />
-            </div>
-          </div> */}
-
-          <div className="mt-6">
-            <UserTable />
-          </div>
+          <Routes>
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/customers" element={<Customers />} />
+            <Route path="/vendor" element={<Vendor />} />
+          </Routes>
         </main>
       </div>
     </div>

@@ -7,6 +7,7 @@ import {
   CogIcon,
   ChevronLeftIcon,
   ChevronRightIcon,
+  BriefcaseIcon,
   UserCircleIcon,
   ArrowRightOnRectangleIcon,
 } from "@heroicons/react/24/outline";
@@ -18,11 +19,9 @@ const Sidebar = ({
   setMobileSidebarOpen,
 }) => {
   const navItems = [
-    { name: "Dashboard", icon: ChartBarIcon, path: "/" },
-    { name: "Users", icon: UsersIcon, path: "/users" },
-    { name: "Products", icon: ShoppingBagIcon, path: "/products" },
-    { name: "Reports", icon: DocumentTextIcon, path: "/reports" },
-    { name: "Settings", icon: CogIcon, path: "/settings" },
+    { name: "Dashboard", icon: ChartBarIcon, path: "/dashboard" },
+    { name: "Vendor", icon: BriefcaseIcon, path: "/vendor" },
+    { name: "Customers", icon: UsersIcon, path: "/customers" },
   ];
 
   const handleCollapseClick = () => {
@@ -32,7 +31,7 @@ const Sidebar = ({
 
   return (
     <aside
-      className={`fixed inset-y-0 z-40 flex flex-col bg-white dark:bg-gray-800 shadow-lg transition-all duration-300 
+      className={`fixed inset-y-0 z-40 flex flex-col bg-white dark:bg-gray-800  transition-all duration-300 
       ${sidebarOpen ? "w-64" : "w-20"} 
       ${mobileSidebarOpen ? "left-0 w-64" : "-left-full md:left-0"}`}
     >
@@ -40,17 +39,17 @@ const Sidebar = ({
       <div className="flex items-center justify-center h-16 px-4 border-b border-gray-200 dark:border-gray-700">
         {sidebarOpen ? (
           <span className="text-xl font-bold text-gray-800 dark:text-white">
-            IT BEAM
+            Meher Bhola Traders
           </span>
         ) : (
           <span className="text-xl font-bold text-gray-800 dark:text-white">
-            IB
+            MBT
           </span>
         )}
       </div>
 
       {/* User Profile */}
-      <div
+      {/* <div
         className={`flex items-center p-4 border-b border-gray-200 dark:border-gray-700 ${
           !sidebarOpen && "justify-center"
         }`}
@@ -64,7 +63,7 @@ const Sidebar = ({
             <p className="text-xs text-gray-500 dark:text-gray-400">Admin</p>
           </div>
         )}
-      </div>
+      </div> */}
 
       {/* Navigation */}
       <nav className="flex-1 overflow-y-auto">
@@ -93,15 +92,6 @@ const Sidebar = ({
       {/* Profile Links */}
       <div className="p-2 border-t border-gray-200 dark:border-gray-700">
         <ul>
-          <li>
-            <NavLink
-              to="/profile"
-              className="flex items-center p-3 rounded-lg text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700"
-            >
-              <UserCircleIcon className="h-5 w-5" />
-              {sidebarOpen && <span className="ml-3">Your Profile</span>}
-            </NavLink>
-          </li>
           <li>
             <button
               onClick={() => alert("Sign out")}
