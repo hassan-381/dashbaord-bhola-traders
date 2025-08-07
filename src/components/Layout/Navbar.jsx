@@ -46,22 +46,6 @@ const Navbar = ({
         <button className="relative flex items-center justify-center p-2 text-gray-500 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
           <BellIcon className="h-5 w-5" />
         </button>
-
-        <Dropdown
-          button={
-            <button className="flex items-center space-x-2">
-              <img
-                className="w-8 h-8 rounded-full"
-                src="https://via.placeholder.com/40"
-                alt="User"
-              />
-              <span className="hidden md:inline text-sm font-medium text-gray-700 dark:text-gray-300">
-                John Doe
-              </span>
-            </button>
-          }
-          className="right-0 mt-2 w-48"
-        ></Dropdown>
       </div>
     </header>
   );
