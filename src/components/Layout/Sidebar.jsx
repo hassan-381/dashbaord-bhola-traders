@@ -11,6 +11,7 @@ import {
   UserCircleIcon,
   ArrowRightOnRectangleIcon,
 } from "@heroicons/react/24/outline";
+import { useNavigate } from "react-router-dom";
 
 const Sidebar = ({
   sidebarOpen,
@@ -23,7 +24,15 @@ const Sidebar = ({
     { name: "Vendor", icon: BriefcaseIcon, path: "/vendor" },
     { name: "Customers", icon: UsersIcon, path: "/customers" },
   ];
+  const navigate = useNavigate();
 
+  const handleSignOut = () => {
+    // 👇 Optional: clear token/localStorage
+    // localStorage.removeItem("token");
+
+    // Navigate to root ("/")
+    navigate("/");
+  };
   const handleCollapseClick = () => {
     setSidebarOpen(!sidebarOpen);
     setMobileSidebarOpen(false);
@@ -94,7 +103,7 @@ const Sidebar = ({
         <ul>
           <li>
             <button
-              onClick={() => alert("Sign out")}
+              onClick={handleSignOut}
               className="w-full flex items-center p-3 rounded-lg text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700"
             >
               <ArrowRightOnRectangleIcon className="h-5 w-5" />
