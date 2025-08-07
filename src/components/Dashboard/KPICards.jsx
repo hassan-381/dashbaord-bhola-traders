@@ -10,7 +10,7 @@ import ProgressBar from "./ProgressBar";
 const KPICards = () => {
   const kpiData = [
     {
-      title: "Revenue",
+      title: "Total Customers",
       value: "$48,568",
       change: "+12.5%",
       trend: "up",
@@ -20,7 +20,7 @@ const KPICards = () => {
       progressLabel: "Annual Target",
     },
     {
-      title: "User Signups",
+      title: "Total Vendors",
       value: "1,258",
       change: "+8.2%",
       trend: "up",
@@ -31,7 +31,7 @@ const KPICards = () => {
       progressLabel: "Monthly Goal",
     },
     {
-      title: "Total Users",
+      title: "Avg Commission",
       value: "24,893",
       change: "-2.3%",
       trend: "down",
@@ -40,20 +40,10 @@ const KPICards = () => {
       progressColor: "purple",
       progressLabel: "Capacity",
     },
-    {
-      title: "Active Sessions",
-      value: "1,024",
-      change: "+5.7%",
-      trend: "up",
-      icon: <ComputerDesktopIcon className="h-6 w-6 text-red-500" />,
-      progress: 68,
-      progressColor: "red",
-      progressLabel: "Daily Average",
-    },
   ];
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {kpiData.map((kpi, index) => (
         <div
           key={index}
